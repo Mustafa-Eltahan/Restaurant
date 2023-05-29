@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>
+        Sign UP PAGE
+    </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <div class="signup">
+        <div class="SEC">
+            <form id="form-login" onsubmit="validateForm(event)">
+                <img src="../Images/images4.jpg" height="100">
+                <br>
+                <br>
+                <label style="color: #ffffff;"> User Name</label>
+                <input type="text" id="name"><br>
+                <label style="color: #ffffff;">Email</label>
+                <input type="email" id="email"><br>
+                <label style="color: #ffffff;">Password</label>
+                <input type="password" id="password" minlength="8"><br>
+                <label style="color: #ffffff;">Confirm Password</label>
+                <input type="password" id="Confirm"><br>
+                <input class="button" type="submit" value="Sign Up">
+                <p style="color: #ffffff; padding-top: 7px;">Have account? <a style="text-decoration: none; color: #009900;"
+                    href="../Login/login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirm = document.getElementById("Confirm").value;
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return false;
+            }
+
+
+            if (password === "") {
+                alert("Please enter a password.");
+                return false;
+            }
+            if (confirm === "") {
+                alert("Please confirm a password.");
+                return false;
+            }
+
+            if (password === confirm) {
+                alert("Signup successful!");
+                window.location.href = "../index.html";
+                document.getElementById("form-login").reset();
+            }
+            else {
+                alert("Failed, Password and confirm password must be the same");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
